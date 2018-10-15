@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
+import com.udacity.movie.udacity_movies.BaseApplication;
 import com.udacity.movie.udacity_movies.Constants;
 import com.udacity.movie.udacity_movies.Movie;
 import com.udacity.movie.udacity_movies.R;

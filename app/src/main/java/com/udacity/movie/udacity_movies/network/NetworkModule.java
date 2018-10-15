@@ -3,6 +3,7 @@ package com.udacity.movie.udacity_movies.network;
 import com.udacity.movie.udacity_movies.BuildConfig;
 import java.util.concurrent.TimeUnit;
 import javax.inject.Singleton;
+import dagger.Module;
 import dagger.Provides;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -17,7 +18,7 @@ public class NetworkModule {
     @Provides
     @Singleton
     Interceptor requestInterceptor(RequestInterceptor interceptor) {
-        return (Interceptor) interceptor;
+        return interceptor;
     }
 
     @Provides
@@ -25,7 +26,7 @@ public class NetworkModule {
     OkHttpClient provideOkHttpClient(RequestInterceptor requestInterceptor) {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         builder.connectTimeout(CONNECT_TIMEOUT_IN_MS, TimeUnit.MILLISECONDS)
-                .addInterceptor((Interceptor) requestInterceptor);
+                .addInterceptor(requestInterceptor);
 
         if (BuildConfig.DEBUG) {
             HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
@@ -53,4 +54,5 @@ public class NetworkModule {
     TmdbWebService tmdbWebService(Retrofit retrofit) {
         return retrofit.create(TmdbWebService.class);
     }
+
 }

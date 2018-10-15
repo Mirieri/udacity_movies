@@ -30,9 +30,6 @@ public class BaseApplication extends Application
         appComponent = createAppComponent();
     }
 
-//    private AppComponent createAppComponent() {
-//    }
-
     private AppComponent createAppComponent()
     {
 

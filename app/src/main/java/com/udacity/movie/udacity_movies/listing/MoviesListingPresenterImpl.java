@@ -2,9 +2,10 @@ package com.udacity.movie.udacity_movies.listing;
 
 import android.support.annotation.NonNull;
 
-import com.esoxjem.movieguide.Movie;
-import com.esoxjem.movieguide.util.EspressoIdlingResource;
-import com.esoxjem.movieguide.util.RxUtils;
+
+import com.udacity.movie.udacity_movies.Movie;
+import com.udacity.movie.udacity_movies.util.EspressoIdlingResource;
+import com.udacity.movie.udacity_movies.util.RxUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,9 +14,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
-/**
- * @author arun
- */
+
 class MoviesListingPresenterImpl implements MoviesListingPresenter {
     private MoviesListingView view;
     private MoviesListingInteractor moviesInteractor;

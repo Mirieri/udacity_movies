@@ -1,8 +1,6 @@
 package com.udacity.movie.udacity_movies.listing;
 
-/**
- * @author arun
- */
+
 public interface MoviesListingPresenter
 {
     void firstPage();
