@@ -11,7 +11,7 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.moshi.MoshiConverterFactory;
-
+@Module
 public class NetworkModule {
     public static final int CONNECT_TIMEOUT_IN_MS = 30000;
 
