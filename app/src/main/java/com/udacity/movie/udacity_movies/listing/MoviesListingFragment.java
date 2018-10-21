@@ -21,7 +21,7 @@ import com.udacity.movie.udacity_movies.BaseApplication;
 import com.udacity.movie.udacity_movies.Constants;
 import com.udacity.movie.udacity_movies.Movie;
 import com.udacity.movie.udacity_movies.R;
-import com.udacity.movie.udacity_movies.listing.sorting.SortingDialogFragment;
+import com.udacity.movie.udacity_movies.sorting.SortingDialogFragment;
 
 import java.util.ArrayList;
 import java.util.List;

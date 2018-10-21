@@ -1,4 +1,4 @@
-package com.udacity.movie.udacity_movies.listing.sorting;
+package com.udacity.movie.udacity_movies.sorting;
 
 
 class SortingDialogInteractorImpl implements SortingDialogInteractor

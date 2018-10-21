@@ -3,7 +3,7 @@ package com.udacity.movie.udacity_movies.listing;
 
 
 import com.udacity.movie.udacity_movies.favorites.FavoritesInteractor;
-import com.udacity.movie.udacity_movies.listing.sorting.SortingOptionStore;
+import com.udacity.movie.udacity_movies.sorting.SortingOptionStore;
 import com.udacity.movie.udacity_movies.network.TmdbWebService;
 
 import dagger.Module;

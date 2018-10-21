@@ -2,8 +2,8 @@ package com.udacity.movie.udacity_movies.listing;
 
 
 
-import com.udacity.movie.udacity_movies.listing.sorting.SortingDialogFragment;
-import com.udacity.movie.udacity_movies.listing.sorting.SortingModule;
+import com.udacity.movie.udacity_movies.sorting.SortingDialogFragment;
+import com.udacity.movie.udacity_movies.sorting.SortingModule;
 
 import dagger.Subcomponent;
 
