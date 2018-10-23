@@ -4,13 +4,13 @@
     <string name="most_popular">most popular</string>
     <string name="highest_rated">highest rated</string>
     <string name="sort_by">Sort By</string>
-    <string name="movie_guide">MovieGuide</string>
+    <string name="movie_guide">Udacity Movie</string>
     <string name="loading_movies">Loading Movies</string>
     <string name="favourite">favourite</string>
     <string name="newest">newest</string>
-    <string name="trailers">trailers</string>
-    <string name="review">review</string>
-    <string name="summary">summary</string>
+    <string name="trailers">Trailers</string>
+    <string name="review">Review</string>
+    <string name="summary">Summary</string>
     <string name="movie_details">Movie Details</string>
     <string name="release_date">Release Date: %s</string>
     <string name="rating">%s/10</string>

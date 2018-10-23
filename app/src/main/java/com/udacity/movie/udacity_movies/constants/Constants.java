@@ -1,4 +1,4 @@
-package com.udacity.movie.udacity_movies;
+package com.udacity.movie.udacity_movies.constants;
 
 
 public class Constants {

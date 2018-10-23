@@ -13,7 +13,7 @@ import android.view.MenuItem;
 
 
 import com.jakewharton.rxbinding2.support.v7.widget.RxSearchView;
-import com.udacity.movie.udacity_movies.Constants;
+import com.udacity.movie.udacity_movies.constants.Constants;
 import com.udacity.movie.udacity_movies.Movie;
 import com.udacity.movie.udacity_movies.R;
 import com.udacity.movie.udacity_movies.details.MovieDetailsActivity;
@@ -25,7 +25,13 @@ import java.util.concurrent.TimeUnit;
 
 import io.reactivex.disposables.Disposable;
 
-
+/**
+ * Resources Used for Research
+ * https://medium.com/@diprochowdhury/developing-a-movies-app-with-picasso-and-themoviedb-org-api-using-fragments-eb1bd19cf572
+ * http://square.github.io/picasso/
+ * https://www.androidhive.info/2017/10/android-working-with-butterknife-viewbinding-library/
+ * http://jakewharton.github.io/butterknife/
+ **/
 public class MoviesListingActivity extends AppCompatActivity implements MoviesListingFragment.Callback {
     public static final String DETAILS_FRAGMENT = "DetailsFragment";
     private boolean twoPaneMode;
@@ -51,7 +57,7 @@ public class MoviesListingActivity extends AppCompatActivity implements MoviesLi
     }
 
     private void setToolbar() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         if (getSupportActionBar() != null) {

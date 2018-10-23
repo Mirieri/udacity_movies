@@ -2,9 +2,9 @@ package com.udacity.movie.udacity_movies;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.provider.MediaStore;
 
 import com.squareup.moshi.Json;
+import com.udacity.movie.udacity_movies.constants.Constants;
 
 public class Video implements Parcelable {
     public static final String SITE_YOUTUBE = "YouTube";

@@ -18,7 +18,7 @@ import android.view.ViewGroup;
 
 
 import com.udacity.movie.udacity_movies.BaseApplication;
-import com.udacity.movie.udacity_movies.Constants;
+import com.udacity.movie.udacity_movies.constants.Constants;
 import com.udacity.movie.udacity_movies.Movie;
 import com.udacity.movie.udacity_movies.R;
 import com.udacity.movie.udacity_movies.sorting.SortingDialogFragment;

@@ -5,7 +5,7 @@ import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-import com.udacity.movie.udacity_movies.Constants;
+import com.udacity.movie.udacity_movies.constants.Constants;
 import com.udacity.movie.udacity_movies.Movie;
 import com.udacity.movie.udacity_movies.R;
 

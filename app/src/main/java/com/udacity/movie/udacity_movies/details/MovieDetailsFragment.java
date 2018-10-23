@@ -23,9 +23,10 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.squareup.picasso.Picasso;
 import com.udacity.movie.udacity_movies.Api;
 import com.udacity.movie.udacity_movies.BaseApplication;
-import com.udacity.movie.udacity_movies.Constants;
+import com.udacity.movie.udacity_movies.constants.Constants;
 import com.udacity.movie.udacity_movies.Movie;
 import com.udacity.movie.udacity_movies.R;
 import com.udacity.movie.udacity_movies.Review;
@@ -150,7 +151,11 @@ public class MovieDetailsFragment extends Fragment implements MovieDetailsView, 
     @Override
     public void showDetails(Movie movie)
     {
-        Glide.with(getContext()).load(Api.getBackdropPath(movie.getBackdropPath())).into(poster);
+        Picasso.get()
+                .load(Api.getBackdropPath(movie.getBackdropPath()))
+                .fit()
+                .placeholder(R.drawable.ic_music)
+                .into(poster);
         title.setText(movie.getTitle());
         releaseDate.setText(String.format(getString(R.string.release_date), movie.getReleaseDate()));
         rating.setText(String.format(getString(R.string.rating), String.valueOf(movie.getVoteAverage())));

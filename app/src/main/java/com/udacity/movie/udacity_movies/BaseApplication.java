@@ -14,7 +14,13 @@ import dagger.Component;
 
 import io.realm.Realm;
 
-
+/**
+ * Resources Used for Research
+ * https://medium.com/@diprochowdhury/developing-a-movies-app-with-picasso-and-themoviedb-org-api-using-fragments-eb1bd19cf572
+ * http://square.github.io/picasso/
+ * https://www.androidhive.info/2017/10/android-working-with-butterknife-viewbinding-library/
+ * http://jakewharton.github.io/butterknife/
+ **/
 public class BaseApplication extends Application
 {
     private AppComponent appComponent;
