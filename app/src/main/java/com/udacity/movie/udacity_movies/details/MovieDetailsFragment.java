@@ -102,7 +102,9 @@ public class MovieDetailsFragment extends Fragment implements MovieDetailsView, 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState)
     {
+        //Inflate layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_movie_details, container, false);
+        //bind view using butter knife
         unbinder = ButterKnife.bind(this, rootView);
         setToolbar();
         return rootView;
