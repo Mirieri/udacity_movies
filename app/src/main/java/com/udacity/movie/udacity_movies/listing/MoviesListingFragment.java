@@ -11,6 +11,8 @@ import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -111,20 +113,26 @@ public class MoviesListingFragment extends Fragment implements MoviesListingView
 
     private void initLayoutReferences() {
         moviesListing.setHasFixedSize(true);
+        int posterWidth = 500; // size in pixels (just a random size). You may use other values.
 
-        int columns;
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            columns = 2;
-        } else {
-            columns = getResources().getInteger(R.integer.no_of_columns);
+            calculateBestSpanCount(posterWidth);
         }
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getActivity(), columns);
+        RecyclerView.LayoutManager layoutManager =
+                new GridLayoutManager(getActivity(), calculateBestSpanCount(posterWidth));
 
         moviesListing.setLayoutManager(layoutManager);
         adapter = new MoviesListingAdapter(movies, this);
         moviesListing.setAdapter(adapter);
     }
 
+    private int calculateBestSpanCount(int posterWidth){
+        Display display = getActivity().getWindowManager().getDefaultDisplay();
+        DisplayMetrics outMetrics = new DisplayMetrics();
+        display.getMetrics(outMetrics);
+        float screenWidth = outMetrics.widthPixels;
+        return Math.round(screenWidth/posterWidth);
+    }
     @Override
     public void showMovies(List<Movie> movies) {
         this.movies.clear();

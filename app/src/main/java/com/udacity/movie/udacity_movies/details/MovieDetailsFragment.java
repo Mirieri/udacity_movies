@@ -33,6 +33,7 @@ import com.udacity.movie.udacity_movies.Review;
 import com.udacity.movie.udacity_movies.Video;
 
 import java.util.List;
+import java.util.Objects;
 
 import javax.inject.Inject;
 
@@ -144,10 +145,9 @@ public class MovieDetailsFragment extends Fragment implements MovieDetailsView, 
             {
                 actionBar.setDisplayHomeAsUpEnabled(true);
             }
-        } else
-        {
-            // Don't inflate. Tablet is in landscape mode.
         }
+        // Don't inflate. Tablet is in landscape mode.
+
     }
 
     @Override
@@ -182,7 +182,7 @@ public class MovieDetailsFragment extends Fragment implements MovieDetailsView, 
             horizontalScrollView.setVisibility(View.VISIBLE);
 
             this.trailers.removeAllViews();
-            LayoutInflater inflater = getActivity().getLayoutInflater();
+            LayoutInflater inflater = Objects.requireNonNull(getActivity()).getLayoutInflater();
             RequestOptions options = new RequestOptions()
                     .placeholder(R.color.colorPrimary)
                     .centerCrop()
@@ -217,7 +217,7 @@ public class MovieDetailsFragment extends Fragment implements MovieDetailsView, 
             reviewsContainer.setVisibility(View.VISIBLE);
 
             reviewsContainer.removeAllViews();
-            LayoutInflater inflater = getActivity().getLayoutInflater();
+            LayoutInflater inflater = Objects.requireNonNull(getActivity()).getLayoutInflater();
             for (Review review : reviews)
             {
                 ViewGroup reviewContainer = (ViewGroup) inflater.inflate(R.layout.review, reviewsContainer, false);
@@ -234,13 +234,13 @@ public class MovieDetailsFragment extends Fragment implements MovieDetailsView, 
     @Override
     public void showFavorited()
     {
-        favorite.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.ic_favorite_white_24dp));
+        favorite.setImageDrawable(ContextCompat.getDrawable(Objects.requireNonNull(getContext()), R.drawable.ic_favorite_white_24dp));
     }
 
     @Override
     public void showUnFavorited()
     {
-        favorite.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.ic_favorite_border_white_24dp));
+        favorite.setImageDrawable(ContextCompat.getDrawable(Objects.requireNonNull(getContext()), R.drawable.ic_favorite_border_white_24dp));
     }
 
     @OnClick(R.id.favorite)
@@ -278,9 +278,12 @@ public class MovieDetailsFragment extends Fragment implements MovieDetailsView, 
 
     private void onThumbnailClick(View view)
     {
+//        Intent sendIntent = new Intent(Intent.ACTION_SEND);
         String videoUrl = (String) view.getTag(R.id.glide_tag);
         Intent playVideoIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(videoUrl));
-        startActivity(playVideoIntent);
+        if (playVideoIntent.resolveActivity(Objects.requireNonNull(getActivity()).getPackageManager()) != null) {
+            startActivity(playVideoIntent);
+        }
     }
 
     private void onFavoriteClick()
@@ -300,6 +303,6 @@ public class MovieDetailsFragment extends Fragment implements MovieDetailsView, 
     public void onDestroy()
     {
         super.onDestroy();
-        ((BaseApplication) getActivity().getApplication()).releaseDetailsComponent();
+        ((BaseApplication) Objects.requireNonNull(getActivity()).getApplication()).releaseDetailsComponent();
     }
 }
