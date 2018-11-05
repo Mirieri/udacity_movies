@@ -154,7 +154,7 @@ public class MovieDetailsFragment extends Fragment implements MovieDetailsView, 
     public void showDetails(Movie movie)
     {
         Picasso.get()
-                .load(Api.getBackdropPath(movie.getBackdropPath()))
+                .load(Api.getBackdropPath(movie.getPosterPath()))
                 .fit()
                 .placeholder(R.drawable.ic_music)
                 .into(poster);
